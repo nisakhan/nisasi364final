@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<h>Search and Save Recent Articles around the World</h>
+<br>
+<br>
+<i>In my application, you can search for articles related to a term in headlines all around the world! The NewsAPI is international and across many different publications. You can search for serious topics like "economy" or silly ones like "whoops!" It will show up. Once you see your list of articles, you can register and login with the app to save a bunch of articles to a collection. You must be logged in for the collections feature! In collections, if you made a mistake, you can go back and delete certain items.
+
+Heads up! All of your searches are logged.
+And you can only see 10 articles at a time.
+<br><br>
+<b>WHEN YOU SEARCH IT HAS TO BE:
+<br>1 word
+<br>and CANNOT start with a #.</b>
+<br><br>The program just won't move on then and will wait until you fix it. You also can't register with the same email.</i>
+<br>
+<br><b><u>THE NAVIGATION IS IN THE FOOTER AS WELL.</u></b>
+<br><br>
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+<br>
+<br>
+{% block navigation %}
+<ul><i>
+    <li><a href="{{ url_for('index') }}">Search for articles</a>
+    <li><a href="{{ url_for('all_articles') }}">See all articles</a></li>
+    <li><a href="{{ url_for('search_terms') }}">See all past searches</a></li>
+    <li><a href="{{ url_for('create_collection') }}">Create a personal article collection</a></li>
+    <li><a href="{{ url_for('collections') }}">See your collections</a></li></i>
+</ul>
+<p>--------</p><br>
+{% endblock %}
+{% block main_content %}
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.search.label }} {{ form.search() }}
+	{{ form.submit() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+{% endblock %}
+{% endblock %}

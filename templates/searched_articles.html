@@ -1,0 +1,33 @@
+<h1>Search results for {{ term.term }}</h1>
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+<ul>
+{% for sg in articles %}
+<li>
+  <h4>{{ sg.title }}</h4>
+  <br><b>URL:</b> {{ sg.URL }}
+  <br><b>Time of Publication:</b> {{ sg.pub }}
+  <br><b>Description:</b> {{ sg.description }}
+  <br><b>Author:</b> {{ sg.author }}
+</li>
+<br>
+{% endfor %}
+</ul>
+
+{% if not articles %}
+There are no saved articles to show.
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+{% endblock %}

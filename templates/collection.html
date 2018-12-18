@@ -1,0 +1,21 @@
+<h1>{{ collection.name }}</h1>
+{% extends 'index.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+
+{% for sg in articles %}
+      <strong>{{ sg.title }}</strong>
+      <br><b>URL:</b> {{ sg.URL }}
+      <br><b>Time of Publication:</b> {{ sg.pub }}
+      <br><b>Description:</b> {{ sg.description }}
+      <br><b>Author:</b> {{ sg.author }}
+      </br>
+    <br><br>
+{% endfor %}
+
+
+{% endblock %}

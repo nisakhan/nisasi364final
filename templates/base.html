@@ -1,0 +1,14 @@
+{% block content %}
+
+This is the base template of an application for article searches.
+
+{% endblock %}
+
+<p>---------------</p>
+<ul><i>
+    <li><a href="{{ url_for('index') }}">Search for articles</a>
+    <li><a href="{{ url_for('all_articles') }}">See all articles</a></li>
+    <li><a href="{{ url_for('search_terms') }}">See all past searches</a></li>
+    <li><a href="{{ url_for('create_collection') }}">Create a personal article collection</a></li>
+    <li><a href="{{ url_for('collections') }}">See your collections</a></li></i>
+</ul>

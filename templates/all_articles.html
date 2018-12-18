@@ -1,0 +1,33 @@
+<h1> All articles </h1>
+{% extends 'index.html' %}
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<ul>
+{% for sg in all_articles %}
+<li>
+  <h4>{{ sg.title }}</h4>
+  <br><b>URL:</b> {{ sg.URL }}
+  <br><b>Time of Publication:</b> {{ sg.pub }}
+  <br><b>Description:</b> {{ sg.description }}
+  <br><b>Author:</b> {{ sg.author }}
+  <br>
+</li>
+<br>
+{% endfor %}
+</ul>
+
+{% if not all_articles %}
+There are no saved articles to show.
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+<a href="{{ url_for('index')}}">Return to search for new articles</a>
+{% endblock %}
