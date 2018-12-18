@@ -36,7 +36,7 @@ https://www.geeksforgeeks.org/python-program-check-string-contains-special-chara
 https://www.pythonforbeginners.com/dictionary/how-to-use-dictionaries-in-python
 https://docs.google.com/document/d/1xjIiqyW0qkN4cTwgLJLjDHCdFcJBG_I6OijAaKvXEuo/edit
 
-Requirements: (Some are not bolding correctly. I should have all of them except AJAX and update.)
+Requirements: (Some are not bolding correctly. I should have all of them except AJAX and update and Heroku.)
 
 **Ensure that your SI364final.py file has all the setup (app.config values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on http://localhost:5000 (and the other routes you set up). Your main file must be called SI364final.py, but of course you may include other files if you need.**
 
@@ -100,4 +100,4 @@ Additional Requirements for extra points -- an app with extra functionality!
 
 (100 points) Include a use of an AJAX request in your application that accesses and displays useful (for use of your application) data.
 **(100 points) Create, run, and commit at least one migration. (We'll see this from the files generated and can check the history)**
-**(100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)**
+(100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)
